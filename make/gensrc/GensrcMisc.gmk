@@ -57,10 +57,12 @@ GENSRC_JAVA_BASE += $(BUILD_VERSION_JAVA)
 
 ################################################################################
 
+# FIXME: DEBUG
+CPP_FLAGS += -x c
 ifneq ($(filter $(TOOLCHAIN_TYPE), gcc clang), )
   # Need to specify language since the template file has a non standard
   # extension.
-  CPP_FLAGS += -x c
+  # CPP_FLAGS += -x c
 else ifeq ($(TOOLCHAIN_TYPE), microsoft)
   CPP_FLAGS += -nologo
 
